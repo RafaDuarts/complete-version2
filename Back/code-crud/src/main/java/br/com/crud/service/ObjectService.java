@@ -10,12 +10,15 @@ import br.com.crud.entity.Object;
 import br.com.dto.ObjectDto;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
+
 @ApplicationScoped
 public class ObjectService {
-    
+
+
     public List<PanacheEntityBase> listObjects(){
         return Object.listAll();
     }
+
 
     @Transactional
     public Object saveObject(ObjectDto dto){
