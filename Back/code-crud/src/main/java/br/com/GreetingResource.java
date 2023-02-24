@@ -31,18 +31,20 @@ public class GreetingResource {
     Object ob12 = new Object("Aimoré", "Estadio Cristo Rei");
 
 
-    addObject(ob1);
-    addObject(ob2);
-    addObject(ob3);
-    addObject(ob4);
-    addObject(ob5);
-    addObject(ob6);
-    addObject(ob7);
-    addObject(ob8);
-    addObject(ob9);
-    addObject(ob10);
-    addObject(ob11);
-    addObject(ob12);
+    
+    objects.add(ob1);
+    objects.add(ob2);
+    objects.add(ob3);
+    objects.add(ob4);
+    objects.add(ob5);
+    objects.add(ob6);
+    objects.add(ob7);
+    objects.add(ob8);
+    objects.add(ob9);
+    objects.add(ob10);
+    objects.add(ob11);
+    objects.add(ob12);
+
 
     }
 
@@ -56,9 +58,9 @@ public class GreetingResource {
         return objects;
     }
     
-    public void addObject(Object object){
-        objects.add(object);
-    }
+    // public void addObject(Object object){
+    //     objects.add(object);
+    // }
 
     @Path("/{name}")
     @GET
