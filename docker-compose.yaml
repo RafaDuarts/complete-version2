@@ -2,11 +2,11 @@ version: '3.8'
 
 services:
   frontend:
-    image: r-front
+    image: rafaelduartes/r-front:r-front
     ports:
       - 3000:3000 # Frontend HTTP server port
 
   backend:
-    image: quarkus/code-crud-jvm
+    image: rafaelduartes/r-back:r-back
     ports:
       - 8080:8080 # Backend HTTP server port
