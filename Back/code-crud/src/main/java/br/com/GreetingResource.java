@@ -64,7 +64,7 @@ public class GreetingResource {
 
     @Path("/{name}")
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.APPLICATION_JSON)
     public Object buscaNome(@PathParam("name") String name){
         List<Object> obj = new ArrayList<Object>();
 
