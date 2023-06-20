@@ -1,16 +1,18 @@
-apiVersion: autoscaling/v2beta1
+apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: quarkus-app-hpa
+  name: app-back
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: quarkus-app
+    name: app-back
   minReplicas: 1
   maxReplicas: 5
   metrics:
-    - type: Resource
-      resource:
-        name: cpu
-        targetAverageUtilization: 50
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 40

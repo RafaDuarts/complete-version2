@@ -58,9 +58,6 @@ public class GreetingResource {
         return objects;
     }
     
-    // public void addObject(Object object){
-    //     objects.add(object);
-    // }
 
     @Path("/{name}")
     @GET

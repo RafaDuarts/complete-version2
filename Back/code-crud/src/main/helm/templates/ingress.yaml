@@ -1,0 +1,23 @@
+{{- if .Values.ingress.enabled -}}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ .Release.Name }}
+  labels:
+    app: {{ $.Release.Name }}
+    release: "{{ .Release.Name }}"
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  rules:
+  - host: {{ .Values.ingress.host }}
+    http:
+      paths:
+      - path: {{ .Values.ingress.pathUrl }}
+        pathType: {{ .Values.ingress.pathType }}
+        backend:
+          service:
+            name: {{ $.Release.Name }}
+            port:
+              number: {{ .Values.ingress.portNumber }}
+{{ end }}
